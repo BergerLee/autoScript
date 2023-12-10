@@ -72,7 +72,7 @@ push_config = {
     'CHAT_URL': '',  # synology chat url
     'CHAT_TOKEN': '',  # synology chat token
 
-    'PUSH_PLUS_TOKEN': '',  # push+ 微信推送的用户令牌
+    'PUSH_PLUS_TOKEN': '546304da541d4685b5c05fcb293f7cc9',  # push+ 微信推送的用户令牌
     'PUSH_PLUS_USER': '',  # push+ 微信推送的群组编码
 
     'QMSG_KEY': '',  # qmsg 酱的 QMSG_KEY

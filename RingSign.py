@@ -8,7 +8,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 url = "https://ring.hklcn.com/wxmall/wxsite/mbr/signin.do"
 headers = {
-    "Cookie": ""
+    "Cookie": "JSESSIONID=D726130F69A97817A86F9792CB169647"
 }
 
 response = requests.get(url, headers=headers, verify=False).json()
