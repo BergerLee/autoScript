@@ -18,7 +18,7 @@ login_data = {
     'type': 'account',
 }
 
-login_response = requests.post(login_url, headers=login_headers, json=login_data, verify=False)
+login_response = requests.post(login_url, headers=login_headers, json=login_data)
 
 cookie1, cookie2 = "", ""
 
