@@ -12,8 +12,8 @@ login_headers = {
 }
 
 login_data = {
-    'mobile': '14723555129',
-    'password': 'XzHKLHyL4D8KyVr',
+    'mobile': '',
+    'password': '',
     'auto_login': True,
     'type': 'account',
 }
