@@ -1,5 +1,6 @@
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
+# Every API自动签到
 
 # 禁用SSL证书验证警告
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
