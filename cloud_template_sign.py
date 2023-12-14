@@ -41,7 +41,7 @@ elif sign_response == 5:
 elif sign_response == 4:
     sign_message = "[True]模板云今日已签到，连续签到已被重置!"
 
-
+print(sign_message)
 notifyTitle = "云模板签到提醒"
 # 消息推送
 notify.pushplus_bot(notifyTitle, sign_message)
