@@ -42,7 +42,7 @@ if sign_response == 1 or sign_response == 3:
             continue_days = div_element.find_next('b').text.strip()
         else:
             print('未找到连续签到信息')
-    sign_message = "[True]模板云今日签到成功！以连续签到{}天".format(continue_days == 0 if continue_days else "null")
+    sign_message = "[True]模板云今日签到成功！以连续签到{}天".format(continue_days != 0 if continue_days else "undefined")
 elif sign_response == 2:
     sign_message = "[Exist]模板云今日已签到，无需重复签到！"
 elif sign_response == 5:
