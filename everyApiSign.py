@@ -1,6 +1,13 @@
+# -------------------------------
+# @Author : github@BergerLee https://github.com/BergerLee
+# @Update by BergerLee
+# @Time : 2023/12/14
+# -------------------------------
+# cron "10 0 * * *" script-path=xxx.py,tag=匹配cron用
+# const $ = new Env('EveryApi每日签到')
+
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
-# Every API自动签到
 
 # 禁用SSL证书验证警告
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)

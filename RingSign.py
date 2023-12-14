@@ -1,3 +1,11 @@
+# -------------------------------
+# @Author : github@BergerLee https://github.com/BergerLee
+# @Update by BergerLee
+# @Time : 2023/12/14
+# -------------------------------
+# cron "10 0 * * *" script-path=xxx.py,tag=匹配cron用
+# const $ = new Env('指尖光环小程序每日签到')
+
 import notify
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
