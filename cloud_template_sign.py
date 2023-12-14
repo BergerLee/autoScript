@@ -1,3 +1,12 @@
+# -------------------------------
+# @Author : github@BergerLee https://github.com/BergerLee/only_for_happy
+# @Update by BergerLee: https://github.com/BergerLee
+# @Time : 2023/12/14
+# -------------------------------
+# cron "30 8,10,15 * * *" script-path=xxx.py,tag=匹配cron用
+# const $ = new Env('模板云每日签到')
+
+
 import notify
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
