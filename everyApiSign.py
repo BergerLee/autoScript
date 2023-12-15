@@ -7,10 +7,11 @@
 # const $ = new Env('EveryApi每日签到')
 
 import requests
+import urllib3
 from urllib3.exceptions import InsecureRequestWarning
 
 # 禁用SSL证书验证警告
-InsecureRequestWarning.disabled = True
+urllib3.disable_warnings(InsecureRequestWarning)
 
 login_url = 'https://q.icodef.com/api/v1/auth/login'
 

@@ -8,6 +8,9 @@
 # const $ = new Env('模板云每日签到')
 
 import time
+
+import urllib3
+
 import notify
 import requests
 from bs4 import BeautifulSoup
@@ -17,7 +20,7 @@ import os
 from urllib3.exceptions import InsecureRequestWarning
 
 # 禁用SSL证书验证警告
-InsecureRequestWarning.disabled = True
+urllib3.disable_warnings(InsecureRequestWarning)
 
 login_page_url = "https://www.22vd.com/login"
 

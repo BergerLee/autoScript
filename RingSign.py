@@ -5,14 +5,14 @@
 # -------------------------------
 # cron "10 0 * * *" script-path=xxx.py,tag=匹配cron用
 # const $ = new Env('指尖光环小程序每日签到')
+import urllib3
 
 import notify
 import requests
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from urllib3.exceptions import InsecureRequestWarning
 
-# 光环公园微信小程序签到领积分
 # 禁用SSL证书验证警告
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+urllib3.disable_warnings(InsecureRequestWarning)
 
 url = "https://ring.hklcn.com/wxmall/wxsite/mbr/signin.do"
 headers = {
