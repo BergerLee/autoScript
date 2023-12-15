@@ -21,16 +21,11 @@ from urllib3.exceptions import InsecureRequestWarning
 
 # 禁用SSL证书验证警告
 urllib3.disable_warnings(InsecureRequestWarning)
-
 login_page_url = "https://www.22vd.com/login"
-
 login_url = ("https://www.22vd.com/wp-admin/admin-ajax.php?action=xh_social_add_ons_login&tab=login"
              "&xh_social_add_ons_login={}&notice_str={}&hash={}")
-
 sign_url = "https://www.22vd.com/wp-admin/admin-ajax.php"
-
 continue_sign_day_url = "https://www.22vd.com/sign"
-
 notify_title = "模板云签到提醒"
 
 
