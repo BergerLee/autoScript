@@ -1,7 +1,7 @@
 # -------------------------------
 # @Author: BergerLee
 # @GitHub: https://github.com/BergerLee
-# @Time: 2023-12-17
+# @Time: 2023-12-18
 # @Version: 1.0
 # @Comment: 需要user_token
 # -------------------------------
@@ -25,6 +25,7 @@ def sign(token):
     }
     try:
         response = requests.post(SIGN_URL, headers=headers, json={}, verify=False).json()
+        print(response)
         response_code = response.get('code', None)
         if response_code == 200:
             return f'[True]{response.get("msg")}'
