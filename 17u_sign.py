@@ -28,7 +28,7 @@ def sign(token):
         print(response)
         response_code = response.get('code', None)
         if response_code == 200:
-            return f'[True]{response.get("msg")}'
+            return f'[True]签到成功！获得里程x{response.get("data").get("signMileage")}'
         else:
             return f'[False]{response.get("msg", "Unknown error")}'
     except requests.RequestException as e:
