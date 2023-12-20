@@ -66,4 +66,4 @@ if __name__ == '__main__':
     miniapp_lottery_result_message = lottery_miniapp(user_token)
     miniapp_sign_result_message = sign_miniapp(user_token)
     notify_content = f"今日签到状态：{miniapp_sign_result_message}\n今日抽奖状态：{miniapp_lottery_result_message}"
-    notify.pushplus_bot("同程旅行签到提醒", notify_content)
+    notify.pushplus_bot("同程旅行提醒", notify_content)
