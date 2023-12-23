@@ -54,6 +54,7 @@ def sign_daily(user_cookie):
         'cookie': user_cookie
     }
     sign_response = requests.post(SIGN_URL, headers=header, verify=False).json()
+    print(sign_response)
     if sign_response['ret'] == 1:
         return '[True]签到成功，{}'.format(sign_response['msg'])
     else:
