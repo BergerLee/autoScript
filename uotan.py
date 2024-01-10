@@ -24,7 +24,7 @@ checkin_url = "https://www.uotan.cn/mjc-credits/clock"
 home_url = "https://www.uotan.cn/"
 
 
-def get_xf_user():
+def get_xf_user(login, password):
     print('-------------------------执行登录操作--------------------------')
     login_page = requests.get(login_page_url, verify=False)
     login_page_response_headers = login_page.headers.get('Set-Cookie').split(';')
@@ -44,8 +44,8 @@ def get_xf_user():
 
     login_data = {
         '_xfToken': xf_token,
-        'login': os.getenv('login'),
-        'password': os.getenv('password'),
+        'login': login,
+        'password': password,
         'remember': '1'
     }
 
@@ -82,10 +82,11 @@ def checkin(xf_user):
 
 
 if __name__ == '__main__':
-    login = os.getenv('login')
-    password = os.getenv('password')
-    if login and password:
-        xf_user = get_xf_user()
+    uotan_account = os.getenv('uotan')
+    if uotan_account:
+        login = uotan_account.split('#')[0]
+        password = uotan_account.split('#')[1]
+        xf_user = get_xf_user(login, password)
         checkin(xf_user)
     else:
         print('请配置账号和密码')
