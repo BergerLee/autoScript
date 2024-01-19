@@ -82,12 +82,14 @@ def checkin(xf_user):
     # 找到所有的dl元素
     checkin_block_elements = checkin_response_soup.find_all('dl')
 
+    notify_content = ""
     # 输出dl元素的内容
     for checkin_context in checkin_block_elements:
         sign_num = checkin_context.find('dt').text.strip()
         month_award = checkin_context.find('dd').text.strip()
         print(f"{sign_num}: {month_award}")
-        notify.pushplus_bot('柚子社区', f"今日签到成功！\n{sign_num}: {month_award}")
+        notify_content += f"{sign_num}: {month_award}\n"
+    notify.pushplus_bot('柚子社区', f"今日签到成功!\n{notify_content}")
 
 
 if __name__ == '__main__':
