@@ -26,7 +26,7 @@
 | 17u_sign.py            | 同程旅行每日签到领里程         |     user_token      |                 /                 |    signal     |    /    |
 | cha_gee.py             | 霸王茶姬每日签到               |    qm_user_token    |                 /                 |    signal     |    /    |
 | ikuuu_vpn              | ikuuu机场签到领流量            |        ikuuu        |       `email` and `passwd`        |   multiple    |    /    |
-| uotan.py               | 柚子社区每日签到               |        uotan        |      `login` and `password`       |    signal     |    /    |
+| uotan.py               | 柚子社区每日签到               |        uotan        |      `login` and `password`       |   multipal    |    /    |
 | notify.py              | 消息推送                       |          /          |                 /                 |       /       |    /    |
 
 
