@@ -17,7 +17,6 @@ urllib3.disable_warnings(InsecureRequestWarning)
 url = "https://ring.hklcn.com/wxmall/wxsite/mbr/signin.do"
 
 token = os.getenv('ring_token')
-# token = "eyJhbGciOiJIUzI1NiJ9.eyJ3eGEtYXBwaWQiOiJ3eGE1NWNhZTM0MmY3OWM2ZTkiLCJ3eGEtb3BlbmlkIjoibzAyelo1YXI1VXlNTDZSR2FtX3ppNnZFLU8zWSIsImV4cCI6MTcxNjk1MDk0Mn0.mVCcVLRxHs0_g-TRVKJneSoBAciyYEfkotQQXSN3kUs"
 
 headers = {
     'sdk-version': '3.4.3',
