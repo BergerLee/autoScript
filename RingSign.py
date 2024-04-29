@@ -6,7 +6,7 @@
 # cron "10 0 * * *" script-path=xxx.py,tag=匹配cron用
 # const $ = new Env('指尖光环小程序每日签到')
 import urllib3
-
+import os
 import notify
 import requests
 from urllib3.exceptions import InsecureRequestWarning
@@ -15,8 +15,13 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
 url = "https://ring.hklcn.com/wxmall/wxsite/mbr/signin.do"
+
+token = os.getenv('ring_token')
+# token = "eyJhbGciOiJIUzI1NiJ9.eyJ3eGEtYXBwaWQiOiJ3eGE1NWNhZTM0MmY3OWM2ZTkiLCJ3eGEtb3BlbmlkIjoibzAyelo1YXI1VXlNTDZSR2FtX3ppNnZFLU8zWSIsImV4cCI6MTcxNjk1MDk0Mn0.mVCcVLRxHs0_g-TRVKJneSoBAciyYEfkotQQXSN3kUs"
+
 headers = {
-    "Cookie": "JSESSIONID=D726130F69A97817A86F9792CB169647"
+    'sdk-version': '3.4.3',
+    'access-token': token
 }
 
 response = requests.get(url, headers=headers, verify=False).json()
