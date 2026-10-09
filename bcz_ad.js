@@ -21,7 +21,7 @@ const rules = [
     handler: function (data) {
       const vip = data?.data?.userVipInfo;
 
-      data.data.nickname = "111";
+      data.nickname = "111";
 
       if (!vip || typeof vip !== "object") {
         return data;
