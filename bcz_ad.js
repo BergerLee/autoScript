@@ -16,43 +16,31 @@ const rules = [
   },
 
   // 会员信息：仅修改 userVipInfo
-{
-  pattern: /\/api\/strategy\/get_member_info_page(?:\?|$)/,
-  handler: function (data) {
-    if (!data || typeof data !== "object") {
+  {
+    pattern: /\/api\/strategy\/get_member_info_page(?:\?|$)/,
+    handler: function (data) {
+      const vip = data?.data?.userVipInfo;
+
+      data.data.nickname = "111";
+
+      if (!vip || typeof vip !== "object") {
+        return data;
+      }
+
+      // 在这里配置希望客户端显示的会员信息
+      const vipConfig = {
+        entitlementKey: "bcz.app.vip.v1",
+        memberLevel: vip.memberLevel,
+        expireTime: 1924876800000,
+        maxValue: vip.maxValue,
+        currentValue: vip.currentValue
+      };
+
+      Object.assign(vip, vipConfig);
+
       return data;
     }
-
-    // 确保 data.data 存在
-    if (!data.data || typeof data.data !== "object") {
-      data.data = {};
-    }
-
-    // 如果没有 userVipInfo，则自动添加
-    if (
-      !data.data.userVipInfo ||
-      typeof data.data.userVipInfo !== "object" ||
-      Array.isArray(data.data.userVipInfo)
-    ) {
-      data.data.userVipInfo = {};
-    }
-
-    const vip = data.data.userVipInfo;
-
-    // 配置希望客户端显示的会员信息
-    const vipConfig = {
-      entitlementKey: "bcz.app.vip.v1",
-      memberLevel: vip.memberLevel ?? 1,
-      expireTime: 1924876800000,
-      maxValue: vip.maxValue ?? 999999,
-      currentValue: vip.currentValue ?? 0
-    };
-
-    Object.assign(vip, vipConfig);
-
-    return data;
   }
-}
 ];
 
 if (!originalBody) {
